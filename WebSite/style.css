@@ -1,0 +1,64 @@
+body{
+    background-color: darkgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+h1.play{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin-top: 140px;
+}
+
+h1.settings{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin-top: auto;
+}
+
+.dropbtn{
+    background-color: grey;
+    margin: auto;
+    color:aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 16px;
+    font-size: 20px;
+    margin-top: 100px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown{
+    position: center;
+    display:inline-block;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: aliceblue;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a{
+    color:black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover{
+    background-color: lightgrey;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+h2{
+    margin-bottom: 20px;
+}

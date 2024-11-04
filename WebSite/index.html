@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <script language="javascript" type="text/javascript">
+        function showSelectedMode(mode)
+        {
+            document.getElementById('selected-mode').innerText = "Wybrany tryb: "+mode;
+        }
+    </script>
+    <title>
+        PBL
+    </title>
+    <div class="dropdown">
+        <button class="dropbtn">WYBIERZ TRYB</button>
+        <div class="dropdown-content">
+        <a href="#" onclick="showSelectedMode('Tryb1')">Tryb1</a>
+        <a href="#" onclick="showSelectedMode('Tryb2')">Tryb2</a>
+        <a href="#" onclick="showSelectedMode('Tryb3')">Tryb3</a>
+        </div>
+    </div>
+    <h2 id="selected-mode">
+        Wybrany tryb: brak
+    </h2>
+    <h1 class = "play">
+        GRAJ
+    </h1>
+    <h1 class = "settings">
+        USTAWIENIA
+    </h1>
+</html>
+</html>
