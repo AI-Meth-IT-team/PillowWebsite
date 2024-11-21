@@ -8,9 +8,21 @@
         {
             document.getElementById('selected-mode').innerText = "Wybrany tryb: "+mode;
         }
+        window.onload = function() {
+                document.getElementById("play").onclick = function() {
+                    if(document.getElementById("selected-mode").innerText!=="Wybrany tryb: brak")
+                    {
+                        location.href = "play.html";
+                    }
+                    else
+                    {
+                        alert("Najpierw wybierz tryb")
+                    }
+                };
+            };
     </script>
     <title>
-        PBL
+        Gra
     </title>
     <div class="dropdown">
         <button class="dropbtn">WYBIERZ TRYB</button>
@@ -23,11 +35,10 @@
     <h2 id="selected-mode">
         Wybrany tryb: brak
     </h2>
-    <h1 class = "play">
+    <button id="play">
         GRAJ
-    </h1>
-    <h1 class = "settings">
+    </button>
+    <button id = "settings">
         USTAWIENIA
-    </h1>
-</html>
+    </button>
 </html>
