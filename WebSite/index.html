@@ -1,44 +1,26 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <script language="javascript" type="text/javascript">
-        function showSelectedMode(mode)
-        {
-            document.getElementById('selected-mode').innerText = "Wybrany tryb: "+mode;
-        }
-        window.onload = function() {
-                document.getElementById("play").onclick = function() {
-                    if(document.getElementById("selected-mode").innerText!=="Wybrany tryb: brak")
-                    {
-                        location.href = "play.html";
-                    }
-                    else
-                    {
-                        alert("Najpierw wybierz tryb")
-                    }
-                };
-            };
-    </script>
-    <title>
-        Gra
-    </title>
-    <div class="dropdown">
-        <button class="dropbtn">WYBIERZ TRYB</button>
-        <div class="dropdown-content">
-        <a href="#" onclick="showSelectedMode('Tryb1')">Tryb1</a>
-        <a href="#" onclick="showSelectedMode('Tryb2')">Tryb2</a>
-        <a href="#" onclick="showSelectedMode('Tryb3')">Tryb3</a>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflex Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body onload="onStart()"> 
+    <div class="content" >
+        <div class="banner">
+            Reflex Game
+        </div>
+        <div class="game">
+            <input type="button" onclick="startGame()" value="Start Game" class="startButton">
+            <div class="sliderContainer">
+                <label for="brightnessSlider" class="sliderLabel">Brightness</label>
+                <input id="brightnessSlider" type="range" min="1" max="100" class="brightnesSlider">
+            </div>
+        </div>        
+        <div class="footer">
+            AI-METH
         </div>
     </div>
-    <h2 id="selected-mode">
-        Wybrany tryb: brak
-    </h2>
-    <button id="play">
-        GRAJ
-    </button>
-    <button id = "settings">
-        USTAWIENIA
-    </button>
+</body>
 </html>
