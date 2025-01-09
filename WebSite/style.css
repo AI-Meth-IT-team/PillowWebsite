@@ -1,0 +1,174 @@
+body,html{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+.content{
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    background: #ff8260; 
+}
+.banner{
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-size: xx-large;
+    font-weight: 800;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+}
+.game{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 55%;
+    background: #ff4057; 
+
+}
+.startButton{
+    width: 50%;
+    height: 30%;
+    background: #900048;
+    border: 1px solid #240041;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+}
+
+.startButton:hover,
+.startButton:active {
+  background-color: #240041;
+  background-position: 0 0;
+  color: #FF4742;
+}
+.startButton:active {
+  opacity: .5;
+}
+.sliderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.sliderLabel {
+    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.brightnesSlider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 80%;
+    max-width: 500px; 
+    min-width: 200px; 
+    height: 10px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #ff8260, #ac0a25);
+    outline: none;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+    margin-top: 20px;
+}
+
+.brightnesSlider:hover {
+    opacity: 1;
+}
+.brightnesSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #900048;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.brightnesSlider::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #900048;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.brightnesSlider::-ms-thumb {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #900048;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.footer{
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-size: large;
+    font-weight: 800;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+}
+
+@media (max-width: 768px) {
+    .banner {
+        font-size: large;
+    }
+    .startButton {
+        width: 70%;
+    }
+    .footer {
+        font-size: medium;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        font-size: medium;
+        padding: 10px;
+    }
+    .startButton {
+        width: 90%;
+        height: 40px;
+        font-size: 14px;
+    }
+    .brightnesSlider {
+        width: 90%;
+    }
+    .footer {
+        font-size: small;
+    }
+}
