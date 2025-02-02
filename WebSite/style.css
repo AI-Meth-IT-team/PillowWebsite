@@ -1,174 +1,228 @@
-body,html{
+body, html {
     display: flex;
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
+    background: linear-gradient(135deg, #240041 0%, #900048 50%, #ff4057 100%);
+    font-family: 'Nunito', sans-serif;
 }
-.content{
+
+.content {
     width: 100%;
     height: 100%;
-    flex-direction: column;
-    background: #ff8260; 
-}
-.banner{
-    height: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #FFFFFF;
-    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
-    font-size: xx-large;
-    font-weight: 800;
-    text-align: center;
-    text-rendering: geometricprecision;
-    text-transform: none;
-}
-.game{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 55%;
-    background: #ff4057; 
+    backdrop-filter: blur(5px);
+}
 
+.banner {
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: #FFFFFF;
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    padding-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
 }
-.startButton{
-    width: 50%;
-    height: 30%;
-    background: #900048;
-    border: 1px solid #240041;
-    border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-    box-sizing: border-box;
+
+.banner::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent 0%, #ffffff 50%, transparent 100%);
+    opacity: 0.3;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    padding: 2rem 0;
+}
+
+.startButton {
+    width: 280px;
+    height: 80px;
+    background: linear-gradient(45deg, #900048 0%, #ff4057 100%);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(144, 0, 72, 0.3);
     color: #FFFFFF;
     cursor: pointer;
-    display: inline-block;
-    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
-    font-size: 16px;
+    font-size: 1.5rem;
     font-weight: 800;
-    line-height: 16px;
-    min-height: 40px;
-    outline: 0;
-    padding: 12px 14px;
-    text-align: center;
-    text-rendering: geometricprecision;
-    text-transform: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: middle;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.startButton:hover,
-.startButton:active {
-  background-color: #240041;
-  background-position: 0 0;
-  color: #FF4742;
+.startButton::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.3),
+        transparent
+    );
+    transition: 0.5s;
 }
-.startButton:active {
-  opacity: .5;
+
+.startButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(144, 0, 72, 0.4);
 }
+
+.startButton:hover::before {
+    left: 100%;
+}
+
+.startButton:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(144, 0, 72, 0.3);
+}
+
 .sliderContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 100px;
+    width: 80%;
+    max-width: 400px;
+    margin-top: 3rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .sliderLabel {
-    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 1.1rem;
     color: #FFFFFF;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
+    opacity: 0.9;
 }
 
 .brightnesSlider {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 80%;
-    max-width: 500px; 
-    min-width: 200px; 
-    height: 10px;
-    border-radius: 5px;
-    background: linear-gradient(to right, #ff8260, #ac0a25);
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.15);
     outline: none;
-    opacity: 0.9;
-    transition: opacity 0.2s;
-    margin-top: 20px;
+    -webkit-appearance: none;
 }
 
-.brightnesSlider:hover {
-    opacity: 1;
-}
 .brightnesSlider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    appearance: none;
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    background: #900048;
+    background: #FFFFFF;
     cursor: pointer;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
 }
-.brightnesSlider::-moz-range-thumb {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: #900048;
-    cursor: pointer;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+.brightnesSlider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
 }
-.brightnesSlider::-ms-thumb {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: #900048;
-    cursor: pointer;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-.footer{
-    height: 15%;
+
+.footer {
+    height: 25%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    color: #FFFFFF;
-    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
-    font-size: large;
-    font-weight: 800;
-    text-align: center;
-    text-rendering: geometricprecision;
-    text-transform: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    padding-top: 2rem;
+    position: relative;
+}
+
+#chart-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+#chart-container:hover {
+    transform: translateY(-5px);
 }
 
 @media (max-width: 768px) {
     .banner {
-        font-size: large;
+        font-size: 2.5rem;
+        height: 20%;
     }
+    
     .startButton {
-        width: 70%;
+        width: 220px;
+        height: 70px;
+        font-size: 1.2rem;
     }
-    .footer {
-        font-size: medium;
+    
+    #chart-container {
+        width: 90%;
+        right: 5%;
+        bottom: 10px;
+    }
+    
+    .sliderContainer {
+        margin-top: 2rem;
+        padding: 1rem;
     }
 }
 
 @media (max-width: 480px) {
     .banner {
-        font-size: medium;
-        padding: 10px;
+        font-size: 2rem;
+        padding-bottom: 0.5rem;
     }
+    
     .startButton {
-        width: 90%;
-        height: 40px;
-        font-size: 14px;
+        width: 180px;
+        height: 60px;
+        font-size: 1.1rem;
     }
-    .brightnesSlider {
-        width: 90%;
-    }
+    
     .footer {
-        font-size: small;
+        font-size: 1rem;
     }
+    
+    #chart-container {
+        height: 200px;
+    }
+}
+
+/* Add glowing animation for better visual feedback */
+@keyframes glow {
+    0% { box-shadow: 0 0 10px rgba(255,64,87,0.3); }
+    50% { box-shadow: 0 0 20px rgba(255,64,87,0.6); }
+    100% { box-shadow: 0 0 10px rgba(255,64,87,0.3); }
+}
+
+.game {
+    animation: glow 3s ease-in-out infinite;
 }
