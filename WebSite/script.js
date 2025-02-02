@@ -1,3 +1,7 @@
+function getServerIP(){
+    return "http://0.0.0.0:5000";
+}
+
 function onStart(){
     
     const configFilePath = 'config.json';
@@ -27,10 +31,11 @@ function onStart(){
         });
 }
 function startGame() {
-    const scriptPath = '/pełna/ścieżka/do/skryptu.py'; // Podaj właściwą ścieżkę
+    const raspberryPiIP = getServerIP();
+    const scriptPath = '/home/integralsenso/Desktop/repo/raspberryPillow/main.py'; // Podaj właściwą ścieżkę
     const arguments = ['arg1', 'arg2']; // Argumenty do skryptu
 
-    fetch('http://localhost:5000/start-game', {
+    fetch(`http://${raspberryPiIP}/start-game`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
